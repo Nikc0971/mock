@@ -1,10 +1,11 @@
-# mock
+# Mock
 Сервис для мокирования интеграций в среде тестирования
 
 ### Проект использует:
 in memory h2 DB и консоль по адресу http://localhost:9091/h2-console
 
 ### Пример использования:
+#### mock-rest:
 Приложение должно отвечать сохраненными /path заглушек например:
 ```
 curl --location --request POST 'http://localhost:9091/mock/rest/save' \
@@ -23,7 +24,26 @@ HTTP/1.1 200 OK
 {"code":1}
 ```
 
-PS: Порт прописан 9091, можем скорректировать
+Есть возможность корреляции ответа заглушки в зависимости от входящего запроса
+```
+curl --location --request POST 'http://localhost:9091/mock/rest/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "uri" : "/test",
+    "code": 200,
+    "body" : "{\"${status.code}\":1}"
+}'
+```
+```
+curl --location --request POST 'http://localhost:9091/test'
+--data-raw '{  "status" : {"code": "OK" }}'
+
+HTTP/1.1 200 OK
+{"code":"OK"}
+```
+
+#### mock-mq:
+#### mock-kafka:
 
 ## Запуск
 #### Maven:
