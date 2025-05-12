@@ -12,7 +12,7 @@ curl --location --request POST 'http://localhost:9091/mock/rest/save' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "uri" : "/test",
-    "code": 200,
+    "httpStatusCode": 200,
     "body" : "{\"code\":1}"
 }'
 ```
@@ -30,13 +30,13 @@ curl --location --request POST 'http://localhost:9091/mock/rest/save' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "uri" : "/test",
-    "code": 200,
-    "body" : "{\"${status.code}\":1}"
+    "httpStatusCode": "${res.success?has_content?then('200', '300')},
+    "body" : "{\"code\":\"${code?has_content?then('${code}', 'test_fail_123')}\"}"
 }'
 ```
 ```
 curl --location --request POST 'http://localhost:9091/test'
---data-raw '{  "status" : {"code": "OK" }}'
+--data-raw '{"res": {"success": "OK"}, "code": "test_ok"}'
 
 HTTP/1.1 200 OK
 {"code":"OK"}
