@@ -1,0 +1,18 @@
+error-service:
+    errors-map:
+        default_error:
+            http-status: 500
+            error-code: "1"
+            error-message: "Сервис временно недоступен"
+        business_error:
+            http-status: 500
+            error-code: "3"
+            error-message: "Сервис временно недоступен"
+        mock_not_found_error:
+            http-status: 500
+            error-code: "4"
+            error-message: "Запрашиваемый сервис не сохранен в заглушках"
+        validate_error:
+            http-status: 400
+            error-code: "2"
+            error-message: "Ошибка валидации входящих данных"

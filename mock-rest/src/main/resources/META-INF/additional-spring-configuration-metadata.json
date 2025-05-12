@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "error-service.default-error.http-status",
+      "type": "java.lang.String",
+      "description": "Description for error-service.default-error.http-status."
+    },
+    {
+      "name": "error-service.default-error.error-code",
+      "type": "java.lang.String",
+      "description": "Description for error-service.default-error.error-code."
+    },
+    {
+      "name": "error-service.default-error.error-message",
+      "type": "java.lang.String",
+      "description": "Description for error-service.default-error.error-message."
+    }
+  ]
+}

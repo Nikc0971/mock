@@ -1,0 +1,95 @@
+openapi: '3.0.2'
+info:
+  title: API Mock integration endpoint
+  version: '1.0'
+tags:
+  - name: mock service
+servers:
+  - url: http://localhost:9091/mock/rest
+paths:
+  /save:
+    post:
+      tags:
+        - mock service
+      summary: Save information about rest integration
+      operationId: mock_rest
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mockRq"
+      responses:
+        '200':
+          description: Save information about rest integration
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/mockRs"
+components:
+  schemas:
+    parameter:
+      type: object
+      properties:
+        key:
+          type: string
+          description: имя параметра
+        value:
+          type: string
+          description: значение параметра
+    header:
+      type: object
+      properties:
+        key:
+          type: string
+          description: имя хедера
+        value:
+          type: string
+          description: значение хедера
+    cookie:
+      type: object
+      properties:
+        name:
+          type: string
+          description: имя хедера
+        path:
+          type: string
+          description: значение хедера
+    mockRq:
+      type: object
+      properties:
+        uri:
+          type: string
+          description: uri для мокирования
+          example: "/test"
+          minLength: 1
+          maxLength: 255
+        httpStatusCode:
+          type: string
+          description: http код ответа
+          example: "200"
+        body:
+          type: string
+          description: тело ответа
+          minLength: 0
+          maxLength: 3000
+        params:
+          type: array
+          items:
+            $ref: "#/components/schemas/parameter"
+        headers:
+          type: array
+          items:
+            $ref: "#/components/schemas/header"
+        cookies:
+          type: array
+          items:
+            $ref: "#/components/schemas/cookie"
+          required: [ uri, httpStatusCode ]
+    mockRs:
+      type: object
+      properties:
+        status:
+          type: string
+          description: статус овтета
+          example: "OK"
