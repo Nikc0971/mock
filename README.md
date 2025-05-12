@@ -39,7 +39,7 @@ curl --location --request POST 'http://localhost:9091/test'
 --data-raw '{"res": {"success": "OK"}, "code": "test_ok"}'
 
 HTTP/1.1 200 OK
-{"code":"OK"}
+{"code":"test_ok"}
 ```
 
 #### mock-mq:
