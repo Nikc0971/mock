@@ -18,7 +18,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mockRq"
+              $ref: "#/components/schemas/RestMock"
       responses:
         '200':
           description: Save information about rest integration
@@ -26,6 +26,19 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/mockRs"
+  /restMocks:
+    get:
+      tags:
+        - mock service
+      summary: Save information about rest integration
+      operationId: mock_rest_get
+      responses:
+        '200':
+          description: Save information about rest integration
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetRestMocksRs"
 components:
   schemas:
     parameter:
@@ -55,7 +68,7 @@ components:
         path:
           type: string
           description: значение хедера
-    mockRq:
+    RestMock:
       type: object
       properties:
         uri:
@@ -93,3 +106,7 @@ components:
           type: string
           description: статус овтета
           example: "OK"
+    GetRestMocksRs:
+      type: array
+      items:
+        $ref: "#/components/schemas/RestMock"

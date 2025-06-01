@@ -1,0 +1,208 @@
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+    <link
+            rel="stylesheet"
+            as="style"
+            onload="this.rel='stylesheet'"
+            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Rest mock manager</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,"/>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body>
+<div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-10 py-3">
+            <div class="flex items-center gap-4 text-[#0d151c]">
+                <div class="size-4">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <h2 class="text-[#0d151c] text-lg font-bold leading-tight tracking-[-0.015em]">Rest Mock Manager</h2>
+            </div>
+            <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#0b80ee] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+                <span class="truncate">Add Mock</span>
+            </button>
+        </header>
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col w-80">
+                <h2 class="text-[#0d151c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                    Mocks</h2>
+                <div class="px-4 py-3">
+                    <label class="flex flex-col min-w-40 h-12 w-full">
+                        <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                            <div
+                                    class="text-[#49749c] flex border-none bg-[#e7edf4] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                                    data-icon="MagnifyingGlass"
+                                    data-size="24px"
+                                    data-weight="regular"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                                     viewBox="0 0 256 256">
+                                    <path
+                                            d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <input
+                                    placeholder="Search mocks"
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-full placeholder:text-[#49749c] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                                    value=""
+                            />
+                        </div>
+                    </label>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+                    <div class="text-[#0d151c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12"
+                         data-icon="File" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                             viewBox="0 0 256 256">
+                            <path
+                                    d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1">User List</p>
+                        <p class="text-[#49749c] text-sm font-normal leading-normal line-clamp-2">GET /users</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+                    <div class="text-[#0d151c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12"
+                         data-icon="File" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                             viewBox="0 0 256 256">
+                            <path
+                                    d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1">Create User</p>
+                        <p class="text-[#49749c] text-sm font-normal leading-normal line-clamp-2">POST /users</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+                    <div class="text-[#0d151c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12"
+                         data-icon="File" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                             viewBox="0 0 256 256">
+                            <path
+                                    d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1">Get User</p>
+                        <p class="text-[#49749c] text-sm font-normal leading-normal line-clamp-2">GET /users/{id}</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+                    <div class="text-[#0d151c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12"
+                         data-icon="File" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                             viewBox="0 0 256 256">
+                            <path
+                                    d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1">Update User</p>
+                        <p class="text-[#49749c] text-sm font-normal leading-normal line-clamp-2">PUT /users/{id}</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
+                    <div class="text-[#0d151c] flex items-center justify-center rounded-lg bg-[#e7edf4] shrink-0 size-12"
+                         data-icon="File" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                             viewBox="0 0 256 256">
+                            <path
+                                    d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1">Delete User</p>
+                        <p class="text-[#49749c] text-sm font-normal leading-normal line-clamp-2">DELETE /users/{id}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="flex flex-wrap justify-between gap-3 p-4">
+                    <div class="flex min-w-72 flex-col gap-3">
+                        <p class="text-[#0d151c] tracking-light text-[32px] font-bold leading-tight">Edit</p>
+                        <p class="text-[#49749c] text-sm font-normal leading-normal">GET /users/{id}</p>
+                    </div>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label class="flex flex-col min-w-40 flex-1">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal pb-2">URI</p>
+                        <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border border-[#cedce8] bg-slate-50 focus:border-[#cedce8] h-14 placeholder:text-[#49749c] p-[15px] text-base font-normal leading-normal"
+                                value=""
+                        />
+                    </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label class="flex flex-col min-w-40 flex-1">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal pb-2">HTTP Status Code</p>
+                        <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border border-[#cedce8] bg-slate-50 focus:border-[#cedce8] h-14 placeholder:text-[#49749c] p-[15px] text-base font-normal leading-normal"
+                                value=""
+                        />
+                    </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label class="flex flex-col min-w-40 flex-1">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal pb-2">Headers</p>
+                        <textarea
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border border-[#cedce8] bg-slate-50 focus:border-[#cedce8] min-h-36 placeholder:text-[#49749c] p-[15px] text-base font-normal leading-normal"
+                        ></textarea>
+                    </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label class="flex flex-col min-w-40 flex-1">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal pb-2">Params</p>
+                        <textarea
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border border-[#cedce8] bg-slate-50 focus:border-[#cedce8] min-h-36 placeholder:text-[#49749c] p-[15px] text-base font-normal leading-normal"
+                        ></textarea>
+                    </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label class="flex flex-col min-w-40 flex-1">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal pb-2">Cookies</p>
+                        <textarea
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border border-[#cedce8] bg-slate-50 focus:border-[#cedce8] min-h-36 placeholder:text-[#49749c] p-[15px] text-base font-normal leading-normal"
+                        ></textarea>
+                    </label>
+                </div>
+                <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label class="flex flex-col min-w-40 flex-1">
+                        <p class="text-[#0d151c] text-base font-medium leading-normal pb-2">Body</p>
+                        <textarea
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151c] focus:outline-0 focus:ring-0 border border-[#cedce8] bg-slate-50 focus:border-[#cedce8] min-h-36 placeholder:text-[#49749c] p-[15px] text-base font-normal leading-normal"
+                        ></textarea>
+                    </label>
+                </div>
+                <div class="flex px-4 py-3 justify-end">
+                    <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#0b80ee] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+                    >
+                        <span class="truncate">Save</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
