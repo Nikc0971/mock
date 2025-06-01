@@ -1,10 +1,10 @@
 package ru.peredera.mock.rest.repository.model;
 
 import org.springframework.boot.web.server.Cookie;
-import ru.peredera.mock.rest.model.MockRq;
+import ru.peredera.mock.rest.model.RestMock;
 
 public class EntityConverter {
-    public static MockEntity convert(MockRq rq) {
+    public static MockEntity convert(RestMock rq) {
         var entity = new MockEntity();
         var response = new Response();
 

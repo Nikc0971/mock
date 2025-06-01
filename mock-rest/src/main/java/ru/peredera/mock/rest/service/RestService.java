@@ -10,13 +10,14 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 import ru.peredera.mock.rest.error.exceptions.MockRestException;
-import ru.peredera.mock.rest.model.MockRq;
+import ru.peredera.mock.rest.model.RestMock;
 import ru.peredera.mock.rest.repository.MockRepository;
 import ru.peredera.mock.rest.repository.model.EntityConverter;
 import ru.peredera.mock.rest.repository.model.MockEntity;
 import ru.peredera.mock.rest.repository.model.Response;
 
 import java.net.URI;
+import java.util.List;
 import java.util.Map;
 
 import static java.util.Objects.requireNonNull;
@@ -40,7 +41,7 @@ public class RestService {
      *
      * @param rq описание сохраняемой заглушки
      */
-    public void saveMock(MockRq rq) {
+    public void saveMock(RestMock rq) {
         var entity = EntityConverter.convert(rq);
         enrichIsNeededRender(entity, rq);
         mocksRepository.save(entity);
@@ -112,7 +113,23 @@ public class RestService {
         }
     }
 
-    private void enrichIsNeededRender(MockEntity entity, MockRq rq) {
+    private void enrichIsNeededRender(MockEntity entity, RestMock rq) {
         entity.setIsNeededRender(rq.getBody() != null && rq.getBody().contains("${"));
+    }
+
+    public List<RestMock> getMocks() {
+        return mocksRepository.findAll()
+                .stream()
+                .map(e -> {
+                            var r = convertToEntity(e.getResponse(), Response.class);
+                            return RestMock.builder()
+                                    .uri(e.getUri())
+                                    .httpStatusCode(r.getHttpStatusCode())
+                                    .body(r.getBody())
+                                    //TODO cookies params headers
+                                    .build();
+                        }
+                )
+                .toList();
     }
 }
